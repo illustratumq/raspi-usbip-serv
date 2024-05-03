@@ -13,15 +13,17 @@ vhci-hcd
 ```
 
 ## autobind.sh
-To bind all usb devises:
-```source autobind.sh```
-or
+To bind all usb devises one's:
+```
+source autobind.sh
+```
+or automaticaly
 ```
 watch -n 1 /home/yourlocalname/path_to_this_folder/autobind.sh
 ```
 
 ## unbind_all.sh
-To bind all usb devises:
+To unbind all usb devises:
 ```
 source unbind_all.sh
 ```
