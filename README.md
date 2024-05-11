@@ -36,3 +36,48 @@ Use this command to manage screen's:
 - `Ctrl + a + d` dettach window 
 - `screen -S [screen_id] -X sessionname new_session_name` rename screen
 - `screen -X -S [screen_id] quit` delete screen
+
+## Raspi localhost
+First, you need:
+```
+sudo apt install isc-dhcp-server -y && sudo apt install dnsmasq
+```
+Then, move dhcpd.conf file:
+```
+sudo mv /etc/dhcp/dhcpd.conf /etc/dhcp/dhcpd.conf.backup
+```
+Open one
+```
+sudo nano /etc/dhcp/dhcpd.conf
+```
+And write next options:
+```
+subnet 192.168.9.0 netmask 255.255.255.0 {
+  range 192.168.9.50 192.168.9.100;
+  option routers 192.168.9.1;
+  option subnet-mask 255.255.255.0;
+  option domain-name-servers 8.8.8.8, 8.8.4.4;
+  option broadcast-address 192.168.9.255;
+  default-lease-time 600;
+  max-lease-time 7200;
+}
+```
+Edit isc-dhcp-server:
+```
+sudo nano /etc/default/isc-dhcp-server
+```
+write:
+```
+INTERFACESv4="eth0"
+```
+
+```
+sudo systemctl stop dnsmasq &&
+sudo systemctl disable dnsmasq &&
+sudo service isc-dhcp-server restart &&
+sudo ifconfig eth0 192.168.9.1 &&
+sudo ifconfig eth0 netmask 255.255.255.0 &&
+sudo ifconfig eth0 up
+```
+
+
