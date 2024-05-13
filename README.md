@@ -1,3 +1,8 @@
+## Systemct
+```
+systemctl daemon-reload && systemctl enable auto-server.service && systemctl enable auto-ip.service
+```
+
 ## setup.sh
 To install all libs:
 ```
