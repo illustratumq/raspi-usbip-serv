@@ -1,0 +1,9 @@
+[Unit]
+Description=myscript
+
+[Service]
+Type=simple
+ExecStart=/home/dronspace/raspi-usbip-serv/server.sh
+
+[Install]
+WantedBy=multi-user.target
