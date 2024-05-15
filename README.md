@@ -1,6 +1,6 @@
 ## Systemct
 ```
-systemctl daemon-reload && systemctl enable auto-server.service && systemctl enable auto-ip.service
+sudo mv /home/name/raspi-usbip-serv/autorun-usbip.service /etc/systemd/system/autorun-usbip.service
 ```
 
 ## setup.sh
