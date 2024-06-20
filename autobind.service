@@ -1,0 +1,12 @@
+[Unit]
+Description=mavlink-bridge
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/bin/sh -c '/home/USER/raspi-usbip-serv/autobind.sh'
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
