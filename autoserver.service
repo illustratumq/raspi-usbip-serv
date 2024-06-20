@@ -1,0 +1,11 @@
+[Unit]
+Description=usbip-network-bridge
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c '/home/USER/raspi-usbip-serv/server.sh'
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target
