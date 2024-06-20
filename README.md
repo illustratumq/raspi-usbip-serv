@@ -3,13 +3,13 @@
 #### [ Warning ]: edit path /home/USER/raspi-usbip-serv/ in both files.
 
 ```
-sudo mv /home/name/raspi-usbip-serv/autobind.service /etc/systemd/system/autobind.service &&
+sudo mv /home/name/raspi-usbip-serv/autobind.service /etc/systemd/system/autobind.service 
 ```
 ```
-sudo mv /home/name/raspi-usbip-serv/autoserver.service /etc/systemd/system/autoserver.service &&
+sudo mv /home/name/raspi-usbip-serv/autoserver.service /etc/systemd/system/autoserver.service 
 ```
 ```
-chmod +x /home/user/raspi-usbip-serv/server.sh && chmod +x /home/user/raspi-usbip-serv/autobind.sh &&
+chmod +x /home/user/raspi-usbip-serv/server.sh && chmod +x /home/user/raspi-usbip-serv/autobind.sh 
 ```
 ```
 sudo systemctl enable server.service && sudo systemctl enable autobind.service
