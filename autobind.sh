@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo usbipd -D
+#sudo usbipd -D
 
 # Отримати вивід команди usbip list -l та вилучити лише рядки, які містять слово "busid"
 busids=$(sudo usbip list -l | grep "busid")
@@ -14,11 +14,9 @@ echo "$busids"
 
 # Перевірка, чи є пристрій вже прив'язаний
 for busid in $busids; do
+    sudo usbip bind -b $busid
     if sudo usbip list --remote=127.0.0.1 | grep -q "$busid"; then
         echo "Пристрій [$busid] прив'язаний ✓"
-    else
-        echo "Прив'язка пристрою з [$busid]..."
-        sudo usbip bind -b $busid
     fi
 done
 
