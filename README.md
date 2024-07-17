@@ -12,7 +12,7 @@ sudo mv /home/$USER/raspi-usbip-serv/autoserver.service /etc/systemd/system/auto
 chmod +x /home/$USER/raspi-usbip-serv/server.sh && chmod +x /home/$USER/raspi-usbip-serv/autobind.sh 
 ```
 ```
-sudo systemctl enable server.service && sudo systemctl enable autobind.service
+sudo systemctl enable autoserver.service && sudo systemctl enable autobind.service
 ```
 
 ## setup.sh
