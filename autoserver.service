@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 Type=oneshot
-ExecStart=/bin/sh -c '/home/USER/raspi-usbip-serv/server.sh'
+ExecStart=/bin/sh -c '/home/$USER/raspi-usbip-serv/server.sh'
 RemainAfterExit=true
 
 [Install]
