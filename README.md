@@ -3,13 +3,13 @@
 #### [ Warning ]: edit path /home/USER/raspi-usbip-serv/ in both files.
 
 ```
-sudo mv /home/name/raspi-usbip-serv/autobind.service /etc/systemd/system/autobind.service 
+sudo mv /home/$USER/raspi-usbip-serv/autobind.service /etc/systemd/system/autobind.service 
 ```
 ```
-sudo mv /home/name/raspi-usbip-serv/autoserver.service /etc/systemd/system/autoserver.service 
+sudo mv /home/$USER/raspi-usbip-serv/autoserver.service /etc/systemd/system/autoserver.service 
 ```
 ```
-chmod +x /home/user/raspi-usbip-serv/server.sh && chmod +x /home/user/raspi-usbip-serv/autobind.sh 
+chmod +x /home/$USER/raspi-usbip-serv/server.sh && chmod +x /home/$USER/raspi-usbip-serv/autobind.sh 
 ```
 ```
 sudo systemctl enable server.service && sudo systemctl enable autobind.service
@@ -21,7 +21,9 @@ To install all libs:
 source setup.sh
 ```
 then, you need open the file:
-```sudo nano /etc/modules-load.d/modules.conf```
+```
+sudo nano /etc/modules-load.d/modules.conf
+```
 and write:
 ```
 usbip-core
@@ -36,7 +38,7 @@ source autobind.sh
 ```
 or automaticaly
 ```
-watch -n 1 /home/yourlocalname/path_to_this_folder/autobind.sh
+watch -n 0.5 /home/$USER/raspi-usbip-serv/autobind.sh
 ```
 
 ## unbind_all.sh
